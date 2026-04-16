@@ -7,18 +7,14 @@ No more forgetting about Claude's output while you're doing other things. Get a 
 ## Install
 
 ```bash
-claude plugin install claude-ding
-```
-
-Or clone manually and load with:
-
-```bash
+git clone https://github.com/WILLIAM030623/claude-ding.git
+cd claude-ding
 claude --plugin-dir ./claude-ding
 ```
 
-## Usage
+That's it. Every time Claude finishes a response, you'll hear a beep.
 
-That's it. Once installed, you'll hear a beep every time Claude finishes a response.
+## Usage
 
 ### Configuration
 
@@ -33,7 +29,7 @@ All options are controlled via environment variables:
 Example — set a higher pitch with cooldown:
 
 ```bash
-# In your shell profile or settings.json "env"
+# In your shell profile
 export DING_FREQ=1200
 export DING_COOLDOWN=5000
 ```
@@ -49,10 +45,25 @@ Or in Claude Code's `settings.json`:
 }
 ```
 
-### Uninstall
+### Manual install (without `--plugin-dir`)
 
-```bash
-claude plugin uninstall claude-ding
+If your version of Claude Code doesn't support `--plugin-dir`, you can add the hook directly to your project's `.claude/settings.local.json`:
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /path/to/claude-ding/bin/ding.cjs"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 
 ## How it works
