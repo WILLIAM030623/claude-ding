@@ -1,0 +1,20 @@
+{
+  "name": "claude-ding",
+  "description": "Play a notification sound when Claude Code finishes responding — so you don't miss when it's done while you're away.",
+  "version": "1.0.0",
+  "author": {
+    "name": "WILLIAM030623"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/claude-ding"
+  },
+  "keywords": [
+    "notification",
+    "sound",
+    "ding",
+    "bell",
+    "alert"
+  ]
+}

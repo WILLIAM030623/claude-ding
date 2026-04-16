@@ -1,0 +1,15 @@
+{
+  "description": "Play a notification sound when Claude Code finishes generating a response",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/ding.cjs"
+          }
+        ]
+      }
+    ]
+  }
+}
